@@ -19,7 +19,10 @@ Route::group(['middleware' => 'web'], function(){
 
     Auth::routes();
 
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 });
 
 
+Route::get('usuarios', [App\Http\Controllers\UsuariosController::class, 'index'])->name('usuarios');
+Route::get('usuarios/new', [App\Http\Controllers\UsuariosController::class, 'new']);
+Route::post('usuarios/add', [App\Http\Controllers\UsuariosController::class, 'add']);
